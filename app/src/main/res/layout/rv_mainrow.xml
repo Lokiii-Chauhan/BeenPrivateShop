@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:elevation="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgProducts"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@drawable/add_ic" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/imgProducts"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:text="Lokiii"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDes"
+                android:layout_width="259dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtName"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/imgProducts"
+                android:ellipsize="end"
+                android:lines="2"
+                android:padding="5dp"
+                android:text="Lokiii"
+                android:textColor="@color/black" />
+
+            <xyz.hanks.library.bang.SmallBangView
+                android:id="@+id/rv_imageViewAnimation"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtDes"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="136dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="5dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/txtDes"
+                    android:layout_alignStart="@+id/rv_imageViewAnimation"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/heart_selector"
+                    app:srcCompat="@drawable/heart_selector" />
+
+            </xyz.hanks.library.bang.SmallBangView>
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:padding="5dp"
+                android:text="Lokiii"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
