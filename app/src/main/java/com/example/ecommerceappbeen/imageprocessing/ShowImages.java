@@ -1,4 +1,4 @@
-package com.example.ecommerceappbeen;
+package com.example.ecommerceappbeen.imageprocessing;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ecommerceappbeen.R;
 import com.example.ecommerceappbeen.imageprocessing.SliderAdapterExample;
 import com.example.ecommerceappbeen.imageprocessing.SliderItem;
 import com.parse.FindCallback;

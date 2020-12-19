@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
-import com.example.ecommerceappbeen.MainActivity;
+import com.example.ecommerceappbeen.activities.MainActivity;
 import com.example.ecommerceappbeen.R;
 import com.parse.ParseException;
 import com.parse.ParseUser;

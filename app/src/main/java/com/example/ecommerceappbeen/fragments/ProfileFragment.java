@@ -1,14 +1,7 @@
 package com.example.ecommerceappbeen.fragments;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,29 +9,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.ecommerceappbeen.activities.LikedItemsActivity;
 import com.example.ecommerceappbeen.R;
-import com.example.ecommerceappbeen.auth.LogIn;
-import com.parse.FindCallback;
-import com.parse.GetDataCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -67,6 +45,23 @@ public class ProfileFragment extends Fragment {
         arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, myArraylist);
         listView = view.findViewById(R.id.listView);
         profile_iv = view.findViewById(R.id.profile_iv);
+
+        myArraylist.add("Liked Items");
+
+        listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position){
+                    case 0:
+                        startActivity(new Intent(getApplicationContext(), LikedItemsActivity.class));
+                        break;
+                }
+
+            }
+        });
 
         return view;
 

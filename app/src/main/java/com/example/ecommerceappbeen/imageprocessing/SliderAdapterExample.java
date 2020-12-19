@@ -1,16 +1,13 @@
 package com.example.ecommerceappbeen.imageprocessing;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.ecommerceappbeen.R;
-import com.example.ecommerceappbeen.ShowImages;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.ArrayList;
@@ -24,10 +21,6 @@ public class SliderAdapterExample extends SliderViewAdapter<SliderAdapterExample
     private OnItemClicked onClick;
 
     public interface OnItemClicked {
-        void onItemClick(int position);
-    }
-
-    public interface MyOnClickListener {
         void onItemClick(int position);
     }
 

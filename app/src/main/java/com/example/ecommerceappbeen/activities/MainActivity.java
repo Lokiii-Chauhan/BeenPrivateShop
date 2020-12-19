@@ -1,4 +1,4 @@
-package com.example.ecommerceappbeen;
+package com.example.ecommerceappbeen.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,37 +6,20 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 
+import com.example.ecommerceappbeen.R;
 import com.example.ecommerceappbeen.fragments.PostFragment;
 import com.example.ecommerceappbeen.fragments.ProfileFragment;
 import com.example.ecommerceappbeen.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.parse.FindCallback;
-import com.parse.GetDataCallback;
-import com.parse.ParseException;
-import com.parse.ParseFile;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -63,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.botom_navigation_bar_background_color));
 
         fm.beginTransaction().add(R.id.fragment_container, fragment3, "3").hide(fragment3).commit();
+        toolbar.setVisibility(View.GONE);
         fm.beginTransaction().add(R.id.fragment_container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.fragment_container,fragment1, "1").commit();
 
@@ -83,13 +67,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.navigation_home:
                 fm.beginTransaction().hide(active).show(fragment1).commit();
-                toolbar.setTitle("Home");
+                toolbar.setVisibility(View.GONE);
                 active = fragment1;
                 return true;
 
             case R.id.navigation_post:
                 fm.beginTransaction().hide(active).show(fragment2).commit();
-                toolbar.setTitle("Post Quote");
+                toolbar.setTitle("Add Post");
                 active = fragment2;
                 return true;
 

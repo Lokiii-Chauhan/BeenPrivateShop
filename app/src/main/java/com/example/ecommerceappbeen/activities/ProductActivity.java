@@ -1,4 +1,4 @@
-package com.example.ecommerceappbeen;
+package com.example.ecommerceappbeen.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import com.example.ecommerceappbeen.R;
+import com.example.ecommerceappbeen.imageprocessing.ShowImages;
 import com.example.ecommerceappbeen.imageprocessing.SliderAdapterExample;
 import com.example.ecommerceappbeen.imageprocessing.SliderItem;
 import com.parse.FindCallback;
@@ -31,7 +33,7 @@ public class ProductActivity extends AppCompatActivity implements SliderAdapterE
 
     private TextView txtProductName,txtProductDes,txtProductPrice;
     private int position;
-    private ArrayList<String> nameArraylist,desArrayList,priceArrayList,Urls;
+    private ArrayList<String>Urls;
     private String name,price,des;
     private Toolbar toolbar;
     private Button btnCallus,btnChat;
@@ -61,6 +63,8 @@ public class ProductActivity extends AppCompatActivity implements SliderAdapterE
         des = getIntent().getStringExtra("des");
         Urls = new ArrayList<>();
         price = getIntent().getStringExtra("price");
+
+        getSupportActionBar().setTitle(name);
 
 
         txtProductName.setText(name);

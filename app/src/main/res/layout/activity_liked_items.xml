@@ -2,30 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".fragments.SearchFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activities.LikedItemsActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/searchFragmentToolbar"
-        app:title="MyShop"
+        android:id="@+id/likedToolbar"
+        app:title="Liked Items"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleTextColor="@color/white"
         android:background="@color/botom_navigation_bar_background_color"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"/>
 
-    </androidx.appcompat.widget.Toolbar>
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeToRefresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_main"
+        android:id="@+id/liked_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>
